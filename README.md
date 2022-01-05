@@ -76,3 +76,49 @@ public class b1076 {
 
 <br>
 
+# b1052 물병
+
+```java
+import java.util.Scanner;
+
+public class b1052 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int K = sc.nextInt();
+
+        int count;
+        int result = 0;
+
+        while (true) {
+            count = 0;
+            int copyN = N;
+            while (copyN != 0) {
+
+                if (copyN % 2 == 1) {
+                    count++;
+                }
+                copyN /= 2;
+            }
+            if (count <= K) {
+                break;
+            }
+            N++;
+            result++;
+        }
+        System.out.println(result);
+    }
+}
+```
+
+<p>
+아 이 문제 진짜 어려웠다.. 잡힐 것 같은데 잡히지 않는 기분이라 더 머리아팠다.. 근데 검색해보니 결국 내가 잡으려던 건 허상이었다..
+</p>
+
+
+<p>
+물병을 하나 하나 그려보면서 이 문제는 이진법 계산으로 풀면 되겠다 생각했다. N 을 나머지 연산을 하며 나머지가 1이 나왔을 때 count를 증가시켜주었다. N을 0까지 나눈 뒤 count가 입력 받은 K 값과 비교했을 때 작거나 같은지 확인한다. K 보다 크다면 입력 받았던 N을 1씩 증가시켜 다시 반복문을 실행한다. 이 때 구매해야할 물병 개수인 result를 1 증가시켜준다. 이렇게 반복문을 돌면서 count가 K와 같거나 작다고 나오면 반복문을 빠져나오고 필요한 물병 개수인 result를 출력해준다.
+</p>
+
+
